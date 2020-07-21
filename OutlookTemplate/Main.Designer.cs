@@ -71,7 +71,7 @@
             this.DateLabel.Location = new System.Drawing.Point(60, 60);
             this.DateLabel.Name = "DateLabel";
             this.DateLabel.Size = new System.Drawing.Size(30, 13);
-            this.DateLabel.TabIndex = 4;
+            this.DateLabel.TabIndex = 2;
             this.DateLabel.Text = "Date";
             // 
             // TimeIn
@@ -94,7 +94,7 @@
             this.TimeEntriesLabel.Location = new System.Drawing.Point(25, 102);
             this.TimeEntriesLabel.Name = "TimeEntriesLabel";
             this.TimeEntriesLabel.Size = new System.Drawing.Size(65, 13);
-            this.TimeEntriesLabel.TabIndex = 7;
+            this.TimeEntriesLabel.TabIndex = 4;
             this.TimeEntriesLabel.Text = "Time Entries";
             // 
             // HoursLabel
@@ -103,7 +103,7 @@
             this.HoursLabel.Location = new System.Drawing.Point(54, 140);
             this.HoursLabel.Name = "HoursLabel";
             this.HoursLabel.Size = new System.Drawing.Size(35, 13);
-            this.HoursLabel.TabIndex = 9;
+            this.HoursLabel.TabIndex = 7;
             this.HoursLabel.Text = "Hours";
             // 
             // OutlookButton
@@ -111,7 +111,7 @@
             this.OutlookButton.Location = new System.Drawing.Point(407, 172);
             this.OutlookButton.Name = "OutlookButton";
             this.OutlookButton.Size = new System.Drawing.Size(109, 23);
-            this.OutlookButton.TabIndex = 10;
+            this.OutlookButton.TabIndex = 9;
             this.OutlookButton.Text = "Open Outlook";
             this.OutlookButton.UseVisualStyleBackColor = true;
             this.OutlookButton.Click += new System.EventHandler(this.OutlookButton_Click);
@@ -121,7 +121,7 @@
             this.Hours.Location = new System.Drawing.Point(105, 140);
             this.Hours.Name = "Hours";
             this.Hours.Size = new System.Drawing.Size(411, 20);
-            this.Hours.TabIndex = 11;
+            this.Hours.TabIndex = 8;
             // 
             // Main
             // 

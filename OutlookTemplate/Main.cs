@@ -21,11 +21,11 @@ namespace OutlookTemplate
             }
 
             TimeIn.Format = DateTimePickerFormat.Custom;
-            TimeIn.CustomFormat = "HH:mm tt";
+            TimeIn.CustomFormat = "hh:mm tt";
             TimeIn.ShowUpDown = true;
 
             TimeOut.Format = DateTimePickerFormat.Custom;
-            TimeOut.CustomFormat = "HH:mm tt";
+            TimeOut.CustomFormat = "hh:mm tt";
             TimeOut.ShowUpDown = true;
 
             EmployeeCode.Text = ConfigurationManager.AppSettings["EmployeeCode"];
@@ -39,8 +39,8 @@ namespace OutlookTemplate
             mailItem.CC = ConfigurationManager.AppSettings["CC"];
             mailItem.Subject = "WFH - " + Date.Value.ToString("dd-MMM-yyyy");
 
-            var body = "Time in: "+ TimeIn.Value.ToString("HH:mm tt").ToUpper() + Environment.NewLine;
-            body += "Time out: " + TimeOut.Value.ToString("HH:mm tt").ToUpper() + Environment.NewLine;
+            var body = "Time in: "+ TimeIn.Value.ToString("hh:mm tt").ToUpper() + Environment.NewLine;
+            body += "Time out: " + TimeOut.Value.ToString("hh:mm tt").ToUpper() + Environment.NewLine;
             body += "Hours: " + Hours.Value + Environment.NewLine;
             body += "Employee Code: " + EmployeeCode.Text;
 
