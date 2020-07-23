@@ -39,10 +39,10 @@ namespace OutlookTemplate
             mailItem.CC = ConfigurationManager.AppSettings["CC"];
             mailItem.Subject = "WFH - " + Date.Value.ToString("dd-MMM-yyyy");
 
-            var body = "Time in: "+ TimeIn.Value.ToString("hh:mm tt").ToUpper() + Environment.NewLine;
-            body += "Time out: " + TimeOut.Value.ToString("hh:mm tt").ToUpper() + Environment.NewLine;
+            var body = "Time In: " + TimeIn.Value.ToString("hh:mm tt").ToUpper() + Environment.NewLine;
+            body += "Time Out: " + TimeOut.Value.ToString("hh:mm tt").ToUpper() + Environment.NewLine;
             body += "Hours: " + Hours.Value + Environment.NewLine;
-            body += "Employee Code: " + EmployeeCode.Text;
+            body += "Emp Code: " + EmployeeCode.Text;
 
             mailItem.Body = body;
             mailItem.Display(true);

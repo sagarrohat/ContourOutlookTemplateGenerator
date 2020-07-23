@@ -139,6 +139,7 @@
             this.Controls.Add(this.EmployeeCode);
             this.Controls.Add(this.EmployeeCodeLabel);
             this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Outlook Email Generator";
             ((System.ComponentModel.ISupportInitialize)(this.Hours)).EndInit();
             this.ResumeLayout(false);
