@@ -42,7 +42,7 @@ namespace OutlookTemplate
             var body = "Time In: " + TimeIn.Value.ToString("hh:mm tt").ToUpper() + Environment.NewLine;
             body += "Time Out: " + TimeOut.Value.ToString("hh:mm tt").ToUpper() + Environment.NewLine;
             body += "Hours: " + Hours.Value + Environment.NewLine;
-            body += "Emp Code: " + EmployeeCode.Text;
+            body += "Employee Code: " + EmployeeCode.Text;
 
             mailItem.Body = body;
             mailItem.Display(true);
