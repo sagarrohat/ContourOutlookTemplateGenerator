@@ -28,7 +28,7 @@ namespace OutlookTemplate
             TimeOut.CustomFormat = "hh:mm tt";
             TimeOut.ShowUpDown = true;
 
-            EmployeeCode.Text = ConfigurationManager.AppSettings["EmployeeCode"];
+            RefreshConfigurations();
         }
 
         private void OpenOutlook()
@@ -53,6 +53,25 @@ namespace OutlookTemplate
             Thread worker = new Thread(new ThreadStart(OpenOutlook));
             worker.IsBackground = true;
             worker.Start();
+        }
+
+        private void SettingsButton_Click(object sender, EventArgs e)
+        {
+            var config = new Configurations();
+            config.FormClosed += Config_FormClosed;
+            config.ShowDialog();
+        }
+
+        private void Config_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            RefreshConfigurations();
+        }
+
+        private void RefreshConfigurations()
+        {
+            EmployeeCode.Text = ConfigurationManager.AppSettings["EmployeeCode"];
+            To.Text = ConfigurationManager.AppSettings["To"];
+            CC.Text = ConfigurationManager.AppSettings["CC"];
         }
     }
 }
