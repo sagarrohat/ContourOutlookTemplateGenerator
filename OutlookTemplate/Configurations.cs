@@ -2,7 +2,7 @@
 using System.Configuration;
 using System.Windows.Forms;
 
-namespace OutlookTemplate
+namespace ContourOutlookTemplateGenerator
 {
     public partial class Configurations : Form
     {

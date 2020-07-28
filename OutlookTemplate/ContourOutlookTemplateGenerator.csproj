@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{448E6215-3B0E-44F7-BFAF-5BF82A6DCA15}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>OutlookTemplate</RootNamespace>
-    <AssemblyName>OutlookTemplate</AssemblyName>
+    <RootNamespace>ContourOutlookTemplateGenerator</RootNamespace>
+    <AssemblyName>ContourOutlookTemplateGenerator</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -115,6 +115,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

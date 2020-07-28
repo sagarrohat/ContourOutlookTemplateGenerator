@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutlookTemplate", "OutlookTemplate\OutlookTemplate.csproj", "{448E6215-3B0E-44F7-BFAF-5BF82A6DCA15}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContourOutlookTemplateGenerator", "OutlookTemplate\ContourOutlookTemplateGenerator.csproj", "{448E6215-3B0E-44F7-BFAF-5BF82A6DCA15}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

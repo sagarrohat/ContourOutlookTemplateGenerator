@@ -1,4 +1,4 @@
-﻿namespace OutlookTemplate
+﻿namespace ContourOutlookTemplateGenerator
 {
     partial class Configurations
     {
@@ -77,7 +77,7 @@
             this.CC.Multiline = true;
             this.CC.Name = "CC";
             this.CC.Size = new System.Drawing.Size(380, 56);
-            this.CC.TabIndex = 4;
+            this.CC.TabIndex = 5;
             // 
             // CCLabel
             // 
@@ -85,7 +85,7 @@
             this.CCLabel.Location = new System.Drawing.Point(92, 115);
             this.CCLabel.Name = "CCLabel";
             this.CCLabel.Size = new System.Drawing.Size(21, 13);
-            this.CCLabel.TabIndex = 5;
+            this.CCLabel.TabIndex = 4;
             this.CCLabel.Text = "CC";
             // 
             // UpdateButton

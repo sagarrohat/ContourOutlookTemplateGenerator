@@ -1,4 +1,4 @@
-﻿namespace OutlookTemplate
+﻿namespace ContourOutlookTemplateGenerator
 {
     partial class Main
     {
@@ -44,6 +44,7 @@
             this.CC = new System.Windows.Forms.TextBox();
             this.To = new System.Windows.Forms.TextBox();
             this.ToLabel = new System.Windows.Forms.Label();
+            this.ManualHoursEntry = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.Hours)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,23 +54,23 @@
             this.EmployeeCodeLabel.Location = new System.Drawing.Point(14, 106);
             this.EmployeeCodeLabel.Name = "EmployeeCodeLabel";
             this.EmployeeCodeLabel.Size = new System.Drawing.Size(81, 13);
-            this.EmployeeCodeLabel.TabIndex = 0;
+            this.EmployeeCodeLabel.TabIndex = 2;
             this.EmployeeCodeLabel.Text = "Employee Code";
             // 
             // EmployeeCode
             // 
             this.EmployeeCode.Enabled = false;
-            this.EmployeeCode.Location = new System.Drawing.Point(114, 106);
+            this.EmployeeCode.Location = new System.Drawing.Point(111, 106);
             this.EmployeeCode.Name = "EmployeeCode";
             this.EmployeeCode.Size = new System.Drawing.Size(408, 20);
-            this.EmployeeCode.TabIndex = 1;
+            this.EmployeeCode.TabIndex = 9;
             // 
             // Date
             // 
-            this.Date.Location = new System.Drawing.Point(114, 138);
+            this.Date.Location = new System.Drawing.Point(111, 138);
             this.Date.Name = "Date";
             this.Date.Size = new System.Drawing.Size(408, 20);
-            this.Date.TabIndex = 3;
+            this.Date.TabIndex = 10;
             // 
             // DateLabel
             // 
@@ -77,7 +78,7 @@
             this.DateLabel.Location = new System.Drawing.Point(65, 138);
             this.DateLabel.Name = "DateLabel";
             this.DateLabel.Size = new System.Drawing.Size(30, 13);
-            this.DateLabel.TabIndex = 2;
+            this.DateLabel.TabIndex = 3;
             this.DateLabel.Text = "Date";
             // 
             // TimeIn
@@ -85,14 +86,16 @@
             this.TimeIn.Location = new System.Drawing.Point(111, 171);
             this.TimeIn.Name = "TimeIn";
             this.TimeIn.Size = new System.Drawing.Size(200, 20);
-            this.TimeIn.TabIndex = 5;
+            this.TimeIn.TabIndex = 11;
+            this.TimeIn.ValueChanged += new System.EventHandler(this.TimeIn_ValueChanged);
             // 
             // TimeOut
             // 
             this.TimeOut.Location = new System.Drawing.Point(322, 171);
             this.TimeOut.Name = "TimeOut";
             this.TimeOut.Size = new System.Drawing.Size(200, 20);
-            this.TimeOut.TabIndex = 6;
+            this.TimeOut.TabIndex = 12;
+            this.TimeOut.ValueChanged += new System.EventHandler(this.TimeOut_ValueChanged);
             // 
             // TimeEntriesLabel
             // 
@@ -109,25 +112,27 @@
             this.HoursLabel.Location = new System.Drawing.Point(60, 202);
             this.HoursLabel.Name = "HoursLabel";
             this.HoursLabel.Size = new System.Drawing.Size(35, 13);
-            this.HoursLabel.TabIndex = 7;
+            this.HoursLabel.TabIndex = 5;
             this.HoursLabel.Text = "Hours";
             // 
             // OutlookButton
             // 
-            this.OutlookButton.Location = new System.Drawing.Point(413, 234);
+            this.OutlookButton.Location = new System.Drawing.Point(413, 266);
             this.OutlookButton.Name = "OutlookButton";
             this.OutlookButton.Size = new System.Drawing.Size(109, 23);
-            this.OutlookButton.TabIndex = 9;
+            this.OutlookButton.TabIndex = 15;
             this.OutlookButton.Text = "Open Outlook";
             this.OutlookButton.UseVisualStyleBackColor = true;
             this.OutlookButton.Click += new System.EventHandler(this.OutlookButton_Click);
             // 
             // Hours
             // 
+            this.Hours.DecimalPlaces = 2;
+            this.Hours.Enabled = false;
             this.Hours.Location = new System.Drawing.Point(111, 202);
             this.Hours.Name = "Hours";
-            this.Hours.Size = new System.Drawing.Size(411, 20);
-            this.Hours.TabIndex = 8;
+            this.Hours.Size = new System.Drawing.Size(408, 20);
+            this.Hours.TabIndex = 13;
             // 
             // SettingsButton
             // 
@@ -135,7 +140,7 @@
             this.SettingsButton.Name = "SettingsButton";
             this.SettingsButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.SettingsButton.Size = new System.Drawing.Size(109, 23);
-            this.SettingsButton.TabIndex = 10;
+            this.SettingsButton.TabIndex = 6;
             this.SettingsButton.Text = "Settings";
             this.SettingsButton.UseVisualStyleBackColor = true;
             this.SettingsButton.Click += new System.EventHandler(this.SettingsButton_Click);
@@ -146,24 +151,24 @@
             this.CCLabel.Location = new System.Drawing.Point(74, 76);
             this.CCLabel.Name = "CCLabel";
             this.CCLabel.Size = new System.Drawing.Size(21, 13);
-            this.CCLabel.TabIndex = 11;
+            this.CCLabel.TabIndex = 1;
             this.CCLabel.Text = "CC";
             // 
             // CC
             // 
             this.CC.Enabled = false;
-            this.CC.Location = new System.Drawing.Point(114, 76);
+            this.CC.Location = new System.Drawing.Point(111, 76);
             this.CC.Name = "CC";
             this.CC.Size = new System.Drawing.Size(408, 20);
-            this.CC.TabIndex = 12;
+            this.CC.TabIndex = 8;
             // 
             // To
             // 
             this.To.Enabled = false;
-            this.To.Location = new System.Drawing.Point(114, 46);
+            this.To.Location = new System.Drawing.Point(111, 46);
             this.To.Name = "To";
             this.To.Size = new System.Drawing.Size(408, 20);
-            this.To.TabIndex = 14;
+            this.To.TabIndex = 7;
             // 
             // ToLabel
             // 
@@ -171,15 +176,26 @@
             this.ToLabel.Location = new System.Drawing.Point(75, 46);
             this.ToLabel.Name = "ToLabel";
             this.ToLabel.Size = new System.Drawing.Size(20, 13);
-            this.ToLabel.TabIndex = 13;
+            this.ToLabel.TabIndex = 0;
             this.ToLabel.Text = "To";
+            // 
+            // ManualHoursEntry
+            // 
+            this.ManualHoursEntry.AutoSize = true;
+            this.ManualHoursEntry.Location = new System.Drawing.Point(111, 228);
+            this.ManualHoursEntry.Name = "ManualHoursEntry";
+            this.ManualHoursEntry.Size = new System.Drawing.Size(119, 17);
+            this.ManualHoursEntry.TabIndex = 14;
+            this.ManualHoursEntry.Text = "Manual Hours Entry";
+            this.ManualHoursEntry.UseVisualStyleBackColor = true;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(554, 270);
+            this.ClientSize = new System.Drawing.Size(554, 304);
             this.Controls.Add(this.To);
+            this.Controls.Add(this.ManualHoursEntry);
             this.Controls.Add(this.ToLabel);
             this.Controls.Add(this.CC);
             this.Controls.Add(this.CCLabel);
@@ -221,6 +237,7 @@
         private System.Windows.Forms.TextBox CC;
         private System.Windows.Forms.TextBox To;
         private System.Windows.Forms.Label ToLabel;
+        private System.Windows.Forms.CheckBox ManualHoursEntry;
     }
 }
 

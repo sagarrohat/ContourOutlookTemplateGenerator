@@ -5,7 +5,7 @@ using System.Threading;
 using System.Windows.Forms;
 using Outlook = Microsoft.Office.Interop.Outlook;
 
-namespace OutlookTemplate
+namespace ContourOutlookTemplateGenerator
 {
     public partial class Main : Form
     {
@@ -28,7 +28,22 @@ namespace OutlookTemplate
             TimeOut.CustomFormat = "hh:mm tt";
             TimeOut.ShowUpDown = true;
 
-            RefreshConfigurations();
+            RefreshConfigurations(); 
+            TimeIn.Value = Date.Value;
+            ManualHoursEntry.CheckStateChanged += ManualHoursEntry_CheckStateChanged;
+        }
+
+        private void ManualHoursEntry_CheckStateChanged(object sender, EventArgs e)
+        {
+            if (ManualHoursEntry.Checked)
+            {
+                Hours.Enabled = true;
+            }
+            else
+            {
+                Hours.Enabled = false;
+                CalculateHours();
+            }
         }
 
         private void OpenOutlook()
@@ -72,6 +87,25 @@ namespace OutlookTemplate
             EmployeeCode.Text = ConfigurationManager.AppSettings["EmployeeCode"];
             To.Text = ConfigurationManager.AppSettings["To"];
             CC.Text = ConfigurationManager.AppSettings["CC"];
+        }
+
+        private void TimeIn_ValueChanged(object sender, EventArgs e)
+        {
+            if (!ManualHoursEntry.Checked)
+                CalculateHours();
+        }
+
+        private void TimeOut_ValueChanged(object sender, EventArgs e)
+        {
+            if(!ManualHoursEntry.Checked)
+                CalculateHours();
+        }
+
+        private void CalculateHours()
+        {
+            TimeSpan diff = (TimeOut.Value - TimeIn.Value).Duration();
+            var duration = diff.Hours + (diff.Minutes / 60.0);
+            Hours.Value = Convert.ToDecimal(duration);
         }
     }
 }
