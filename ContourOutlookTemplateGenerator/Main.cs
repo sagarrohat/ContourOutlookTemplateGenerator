@@ -48,19 +48,26 @@ namespace ContourOutlookTemplateGenerator
 
         private void OpenOutlook()
         {
-            Outlook.Application application = new Outlook.Application();
-            Outlook._MailItem mailItem = (Outlook._MailItem)application.CreateItem(Outlook.OlItemType.olMailItem);
-            mailItem.To = ConfigurationManager.AppSettings["To"];
-            mailItem.CC = ConfigurationManager.AppSettings["CC"];
-            mailItem.Subject = "WFH - " + Date.Value.ToString("dd-MMM-yyyy");
+            try {
+                
+                Outlook.Application application = new Outlook.Application();
+                Outlook._MailItem mailItem = (Outlook._MailItem)application.CreateItem(Outlook.OlItemType.olMailItem);
+                mailItem.To = ConfigurationManager.AppSettings["To"];
+                mailItem.CC = ConfigurationManager.AppSettings["CC"];
+                mailItem.Subject = "WFH - " + Date.Value.ToString("dd-MMM-yyyy");
 
-            var body = "Time In: " + TimeIn.Value.ToString("hh:mm tt").ToUpper() + Environment.NewLine;
-            body += "Time Out: " + TimeOut.Value.ToString("hh:mm tt").ToUpper() + Environment.NewLine;
-            body += "Hours: " + Hours.Value + Environment.NewLine;
-            body += "Employee Code: " + EmployeeCode.Text;
+                var body = "Time In: " + TimeIn.Value.ToString("hh:mm tt").ToUpper() + Environment.NewLine;
+                body += "Time Out: " + TimeOut.Value.ToString("hh:mm tt").ToUpper() + Environment.NewLine;
+                body += "Hours: " + Hours.Value + Environment.NewLine;
+                body += "Employee Code: " + EmployeeCode.Text;
 
-            mailItem.Body = body;
-            mailItem.Display(true);
+                mailItem.Body = body;
+                mailItem.Display(true);
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.Message, "Outlook Interop Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
         }
 
         private void OutlookButton_Click(object sender, EventArgs e)
